@@ -16,15 +16,15 @@
 
 #elif USE_AUDIO_I2S
   #include "sound_i2s.h"
-  #define I2S_DATA_PIN             28 // -> I2S DIN
-  #define I2S_CLOCK_PIN_BASE       26 // -> I2S BCK
+  #define I2S_DATA_PIN             9 // -> I2S DIN
+  #define I2S_CLOCK_PIN_BASE       10 // -> I2S BCK
   // The third required connection is GPIO 27 -> I2S LRCK (BCK+1)
 
   static const struct sound_i2s_config sound_config = {
     .pin_sda         = I2S_DATA_PIN,
     .pin_scl         = I2S_CLOCK_PIN_BASE,
     .pin_ws          = I2S_CLOCK_PIN_BASE + 1,
-    .sample_rate     = 22050,
+    .sample_rate     = 44100,
     .pio_num         = 0, // 0 for pio0, 1 for pio1
   };
 
